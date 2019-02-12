@@ -1,8 +1,11 @@
 /* height 100% for html and body + overflow hidden for html + overflow auto to prevent website from "bouncing" when scrolling up */
 /* https://stackoverflow.com/questions/32500876/how-to-prevent-white-space-bounce-after-scrolling-to-the-top-of-the-page-and-t */
+
+/* LIGHT PINK: #B75C57 DARK PINK: #DC3D34 BLUE: #334D5C GREY: #282A2A DARK GREY: #232b2b OFFWHITE: f9f4e6*/
+/* BP GREY: #5E524B DARK PINK: #ad565a LIGHT PINK: FF91A4 */
 html {
-  overflow: hidden;
-  height: 100%;
+  /*overflow: hidden;
+  height: 100%; <-- having these restricts program from scrolling*/
 }
 
 body {
@@ -13,16 +16,15 @@ body {
   background-color: #334D5C;
 }
 
-ul {
-  /* setting list-stype-type to none prevents links in navbar from showing up as bullets */
-  list-style-type: none;
+#navbar {
   width: 100%;
-  padding: 0px 0px 0px 0px;
-  background-color: #282A2A;
+  /*padding: 0px 0px 0px 0px;*/
+  padding: 25px 0px;
+  background-color: #5E524B;
   
   /* sticks navbar to top and removes any unnecessary borders */
   top: 0;
-  margin-top: 0px;
+  margin: 0;
   position: fixed;
   /* higher z-index will allow navbar to stay in front of everything */
   z-index: 99;
@@ -30,31 +32,41 @@ ul {
   transition: 0.4s;
 }
 
-/* allows navbar to be horizontal instead of vertical */
-li {
-  float: left;
+ul {
+  /* setting list-stype-type to none prevents links in navbar from showing up as bullets */
+  list-style-type: none;
 }
 
+/* allows navbar to be horizontal instead of vertical 
+#navbar li {
+  float: left;
+} */
+
 /* Basic Outline from: https://www.w3schools.com/css/css_navbar.asp */
-li a {
+#navbar a {
 	/* using vw allows font size to change instead of wrapping */
 	font-size: 2vw;
   display: block;
+  /* center and left align text */
+  float: left;
   text-align: center;
-  padding: 5px 25px 5px 25px;
+  /* separates text links so that they're not squished */
+  /*padding: 5px 25px 5px 25px;*/
   text-decoration: none;
+  color: #f9f4e6;
+  width: 25%;
 }
 
 /* Change the link color on hover */
-li a:hover {
+#navbar a:hover {
   background-color: #B75C57;
-  color: white;
+  color: #f9f4e6;
 }
 
 /* active section will be highlighted in navbar */
-.active {
-  background-color: #DC3D34;
-  color: white;
+#navbar a.active {
+  background-color: #ad565a;
+  color: #282A2A;
 }
 
 @media screen and (max-width: 580px) {
