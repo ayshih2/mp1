@@ -1,10 +1,36 @@
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+/* height 100% for html and body + overflow hidden for html + overflow auto to prevent website from "bouncing" when scrolling up */
+/* https://stackoverflow.com/questions/32500876/how-to-prevent-white-space-bounce-after-scrolling-to-the-top-of-the-page-and-t */
+html {
   overflow: hidden;
+  height: 100%;
 }
 
+body {
+  /* prevents white border around website */
+  margin: 0;
+  height: 100%;
+  overflow: auto;
+  background-color: #334D5C;
+}
+
+ul {
+  /* setting list-stype-type to none prevents links in navbar from showing up as bullets */
+  list-style-type: none;
+  width: 100%;
+  padding: 0px 0px 0px 0px;
+  background-color: #282A2A;
+  
+  /* sticks navbar to top and removes any unnecessary borders */
+  top: 0;
+  margin-top: 0px;
+  position: fixed;
+  /* higher z-index will allow navbar to stay in front of everything */
+  z-index: 99;
+
+  transition: 0.4s;
+}
+
+/* allows navbar to be horizontal instead of vertical */
 li {
   float: left;
 }
@@ -15,6 +41,49 @@ li a {
 	font-size: 2vw;
   display: block;
   text-align: center;
-  padding: 50px 50px;
+  padding: 5px 25px 5px 25px;
   text-decoration: none;
+}
+
+/* Change the link color on hover */
+li a:hover {
+  background-color: #B75C57;
+  color: white;
+}
+
+/* active section will be highlighted in navbar */
+.active {
+  background-color: #DC3D34;
+  color: white;
+}
+
+@media screen and (max-width: 580px) {
+  #navbar {
+    padding: 20px 10px !important; /* Use !important to make sure that JavaScript doesn't override the padding on small screens */
+  }
+  #navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+/* ----------------------ABOVE IS NAV BAR STUFF-------------------- */
+
+
+.sectionBody {
+  height: 500px;
+  width: 100%;
+}
+
+#sectionOne {
+  background-color: #334D5C;
+}
+
+#sectionTwo {
+  background-color: #6B6766;
+}
+
+#sectionThree {
+  background-color: #334D5C;
 }
