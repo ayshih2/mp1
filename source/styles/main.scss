@@ -4,8 +4,8 @@
 /* LIGHT PINK: #B75C57 DARK PINK: #DC3D34 BLUE: #334D5C GREY: #282A2A DARK GREY: #232b2b OFFWHITE: f9f4e6*/
 /* BP GREY: #5E524B DARK PINK: #ad565a LIGHT PINK: FF91A4 */
 html {
-  /*overflow: hidden;
-  height: 100%; <-- having these restricts program from scrolling*/
+  overflow: hidden;
+  height: 100%; /*<-- having these restricts program from scrolling*/
 }
 
 body {
@@ -14,6 +14,7 @@ body {
   height: 100%;
   overflow: auto;
   background-color: #334D5C;
+  /*position: relative;*/
 }
 
 #navbar {
@@ -41,6 +42,11 @@ ul {
 #navbar li {
   float: left;
 } */
+
+#navbarRight {
+  float: right;
+  width: 50%;
+}
 
 /* Basic Outline from: https://www.w3schools.com/css/css_navbar.asp */
 #navbar a {
@@ -83,19 +89,38 @@ ul {
 /* ----------------------ABOVE IS NAV BAR STUFF-------------------- */
 
 
+.col {
+  float: left;
+  width: 33.33%;
+}
+
+.col p {
+    text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
 .sectionBody {
-  height: 500px;
+  height: 1000px;
   width: 100%;
 }
 
-#sectionOne {
+#home_page {
   background-color: #334D5C;
 }
 
-#sectionTwo {
+#news_page {
   background-color: #6B6766;
 }
 
-#sectionThree {
+#contact_page {
   background-color: #334D5C;
+  font-size: 1.5vw;
+  margin: 0 auto;
+  display: table;
+
+}
+
+#about_page {
+  background-color: #6B6766;
 }
