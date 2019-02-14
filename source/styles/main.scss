@@ -3,10 +3,6 @@
 
 /* LIGHT PINK: #B75C57 DARK PINK: #DC3D34 BLUE: #334D5C GREY: #282A2A DARK GREY: #232b2b OFFWHITE: f9f4e6*/
 /* BP GREY: #5E524B DARK PINK: #ad565a LIGHT PINK: FF91A4 */
-html {
-  overflow: hidden;
-  height: 100%; /*<-- having these restricts program from scrolling*/
-}
 
 body {
   /* prevents white border around website */
@@ -90,14 +86,16 @@ ul {
 
 
 .col {
-  float: left;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+
+  /*margin: 0;*/
   width: 33.33%;
 }
 
 .col p {
-    text-align: center;
-  display: table-cell;
-  vertical-align: middle;
+  text-align: center;
 }
 
 .sectionBody {
@@ -118,6 +116,7 @@ ul {
   font-size: 1.5vw;
   margin: 0 auto;
   display: table;
+  width: 90%;
 
 }
 
