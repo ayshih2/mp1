@@ -70,15 +70,13 @@ ul {
 
 /* Change the link color on hover */
 #navbar a:hover {
-  /*background-color: #585858;*/
-  outline: 1px solid black;
-  color: /*#f9f4e6*/ #000000;
+  outline: 1.5px solid black;
+  outline-offset: 2px;
+  color: #000000;
 }
 
 /* active section will be highlighted in navbar */
 #navbar a.active {
-  /*background-color: #ad565a;*/
-  /*outline: 2px solid black;*/
   color: #f9f4e6;
   text-decoration: underline;
 }

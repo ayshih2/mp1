@@ -43,16 +43,17 @@ function getPosition(el) {
 
 /* from https://stackoverflow.com/questions/20726557/ */
 document.addEventListener('DOMContentLoaded', function() {
-	document.getElementById('ariBttn').addEventListener('click', function(){ navigateTo(home_page); }, false);
-	document.getElementById('newsBttn').addEventListener('click', function(){ navigateTo(news_page); }, false);
-	document.getElementById('billieBttn').addEventListener('click', function(){ navigateTo(contact_page); }, false);
-	document.getElementById('aboutBttn').addEventListener('click', function(){ navigateTo(about_page); }, false);
-	}, false);
+	document.getElementById('ariBttn').addEventListener('click', function(){ changeActive("ariBttn"); }, false);
+	document.getElementById('bpBttn').addEventListener('click', function(){ changeActive("bpBttn"); }, false);
+	document.getElementById('billieBttn').addEventListener('click', function(){ changeActive("billieBttn"); }, false);
+	document.getElementById('moreBttn').addEventListener('click', function(){ changeActive("moreBttn"); }, false);
+}, false);
 
 
-function navigateTo(target) {
-  document.querySelector('#target').scrollIntoView({ 
-  	behavior: 'smooth' 
-	});
+function changeActive(target) {
+  var current = document.getElementsByClassName('active');
+  /* since there should only be one active link at one time */
+  current[0].classList.remove('active');
+  document.getElementById(target).className = 'active';
 }
 
