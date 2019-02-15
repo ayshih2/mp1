@@ -8,7 +8,7 @@ function offset(el) {
 }
 
 function scrollFunction() {
-	var homeDiv = document.getElementById("home_page");
+	var homeDiv = document.getElementById("ari_page");
 	var offsetDiv = getPosition(homeDiv);
 	/*alert(offsetDiv.x + " " + offsetDiv.y);*/
 
@@ -39,5 +39,20 @@ function getPosition(el) {
     el = el.offsetParent;
   }
   return { x: xPos, y: yPos };
+}
+
+/* from https://stackoverflow.com/questions/20726557/ */
+document.addEventListener('DOMContentLoaded', function() {
+	document.getElementById('ariBttn').addEventListener('click', function(){ navigateTo(home_page); }, false);
+	document.getElementById('newsBttn').addEventListener('click', function(){ navigateTo(news_page); }, false);
+	document.getElementById('billieBttn').addEventListener('click', function(){ navigateTo(contact_page); }, false);
+	document.getElementById('aboutBttn').addEventListener('click', function(){ navigateTo(about_page); }, false);
+	}, false);
+
+
+function navigateTo(target) {
+  document.querySelector('#target').scrollIntoView({ 
+  	behavior: 'smooth' 
+	});
 }
 

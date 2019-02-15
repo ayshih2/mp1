@@ -4,12 +4,16 @@
 /* LIGHT PINK: #B75C57 DARK PINK: #DC3D34 BLUE: #334D5C GREY: #282A2A DARK GREY: #232b2b OFFWHITE: f9f4e6*/
 /* BP GREY: #5E524B DARK PINK: #ad565a LIGHT PINK: FF91A4 */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   /* prevents white border around website */
   margin: 0;
   height: 100%;
   overflow: auto;
-  background-color: #334D5C;
+  background-color: #404040;
   /*position: relative;*/
 }
 
@@ -17,7 +21,7 @@ body {
   width: 100%;
   /*padding: 0px 0px 0px 0px;*/
   padding: 25px 0px;
-  background-color: #5E524B;
+  background-color: #86626E;
   
   /* sticks navbar to top and removes any unnecessary borders */
   top: 0;
@@ -34,14 +38,18 @@ ul {
   list-style-type: none;
 }
 
-/* allows navbar to be horizontal instead of vertical 
-#navbar li {
+#navbarTitle {
   float: left;
-} */
+  font-size: 2vw;
+  color: #f9f4e6;
+  padding: 0 20px;
+  font-variant: small-caps;
+}
 
 #navbarRight {
   float: right;
-  width: 50%;
+  width: 60%;
+  font-variant: small-caps;
 }
 
 /* Basic Outline from: https://www.w3schools.com/css/css_navbar.asp */
@@ -49,11 +57,12 @@ ul {
 	/* using vw allows font size to change instead of wrapping */
 	font-size: 2vw;
   display: block;
+  
   /* center and left align text */
   float: left;
   text-align: center;
+  
   /* separates text links so that they're not squished */
-  /*padding: 5px 25px 5px 25px;*/
   text-decoration: none;
   color: #f9f4e6;
   width: 25%;
@@ -61,14 +70,17 @@ ul {
 
 /* Change the link color on hover */
 #navbar a:hover {
-  background-color: #B75C57;
-  color: #f9f4e6;
+  /*background-color: #585858;*/
+  outline: 1px solid black;
+  color: /*#f9f4e6*/ #000000;
 }
 
 /* active section will be highlighted in navbar */
 #navbar a.active {
-  background-color: #ad565a;
-  color: #282A2A;
+  /*background-color: #ad565a;*/
+  /*outline: 2px solid black;*/
+  color: #f9f4e6;
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 580px) {
@@ -101,25 +113,21 @@ ul {
 .sectionBody {
   height: 1000px;
   width: 100%;
+  background-color: #A9A9A9 ;
 }
 
-#home_page {
-  background-color: #334D5C;
+#ari_page {
 }
 
-#news_page {
-  background-color: #6B6766;
+#billie_page {
 }
 
-#contact_page {
-  background-color: #334D5C;
+#bp_page {
+}
+
+#more_page {
+
   font-size: 1.5vw;
   margin: 0 auto;
   display: table;
-  width: 90%;
-
-}
-
-#about_page {
-  background-color: #6B6766;
 }
