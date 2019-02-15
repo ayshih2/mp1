@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('ariBttn').addEventListener('click', function(){ changeActive("ariBttn"); }, false);
 	document.getElementById('bpBttn').addEventListener('click', function(){ changeActive("bpBttn"); }, false);
 	document.getElementById('billieBttn').addEventListener('click', function(){ changeActive("billieBttn"); }, false);
-	document.getElementById('moreBttn').addEventListener('click', function(){ changeActive("moreBttn"); }, false);
+	/*document.getElementById('moreBttn').addEventListener('click', function(){ changeActive("moreBttn"); }, false);*/
 }, false);
 
 

@@ -34,8 +34,9 @@ body {
 }
 
 ul {
-  /* setting list-stype-type to none prevents links in navbar from showing up as bullets */
-  list-style-type: none;
+  
+  /*list-style-position: inside;*/
+  display: inline-block;
 }
 
 #navbarTitle {
@@ -65,7 +66,7 @@ ul {
   /* separates text links so that they're not squished */
   text-decoration: none;
   color: #f9f4e6;
-  width: 25%;
+  width: 33.33%;
 }
 
 /* Change the link color on hover */
@@ -97,11 +98,13 @@ ul {
 
 .col {
   display: table-cell;
+  /*display: inline-block;*/
   vertical-align: middle;
   text-align: center;
+  font-variant: small-caps;
 
   /*margin: 0;*/
-  width: 33.33%;
+  width: 25%;
 }
 
 .col p {
@@ -109,23 +112,81 @@ ul {
 }
 
 .sectionBody {
-  height: 1000px;
+  height: 800px;
   width: 100%;
   background-color: #A9A9A9 ;
 }
 
 #ari_page {
+  border-bottom: 2px gray solid;
 }
 
 #billie_page {
+  border-bottom: 2px gray solid;
 }
 
 #bp_page {
+  border-bottom: 2px gray solid;
 }
 
-#more_page {
+.bp_caption {
+  font-variant: small-caps;
+  color: #f9f4e6;
+}
 
+.bp_photos {
+  width: 40%;
+  height: auto;
+  margin: 10px 20px 0px 20px;
+}
+
+.slideshow_container {
+  float: left;
+  margin: auto;
+}
+
+.slides {
+  /*display: none;*/
+}
+
+.prev, .next {
+  cursor: pointer;
+  user-select: none;
+  color: white;
+  font-size: 18px;
+  position: relative;
+  bottom: 350px;
+  
+  /*width: auto;
+  padding: 3vh;
+  
+  
+  position: absolute;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;*/
+
+
+  
+}
+
+/*.next {
+  right: 20;
+  border-radius: 0px 0 0 0px;
+}*/
+
+.right {
+  right: 5px;
+}
+
+
+#more_page {
+  border-top: 2px gray solid;
   font-size: 1.5vw;
   margin: 0 auto;
   display: table;
+}
+
+.more_gifs {
+  width: 250px;
+  height: auto;
 }
