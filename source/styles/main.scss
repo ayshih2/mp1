@@ -37,6 +37,7 @@ ul {
   
   /*list-style-position: inside;*/
   display: inline-block;
+  text-align: left;
 }
 
 #navbarTitle {
@@ -107,6 +108,19 @@ ul {
   width: 25%;
 }
 
+@media screen and (max-width: 980px) {
+  .col {
+    display: block;
+    float: none;
+    width: auto;
+  }
+}
+
+.icon {
+  text-align: center;
+  font-size: 30px;
+}
+
 .col p {
   text-align: center;
 }
@@ -164,9 +178,6 @@ ul {
   position: absolute;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;*/
-
-
-  
 }
 
 /*.next {
@@ -182,11 +193,14 @@ ul {
 #more_page {
   border-top: 2px gray solid;
   font-size: 1.5vw;
-  margin: 0 auto;
   display: table;
+  left: 50%;
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 .more_gifs {
   width: 250px;
   height: auto;
+  text-align: center;
 }
