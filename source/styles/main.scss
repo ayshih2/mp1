@@ -145,9 +145,7 @@ ul {
   padding: 0;
   display: inline-flex;
   align-items: center;
-  justify-content:center;
-  width: 100%;
-  
+  justify-content:space-evenly;
 }
 
 #ari_page p {
@@ -194,6 +192,10 @@ ul {
   padding: 25px 25px;
   color: #f9f4e6;
   font-variant: small-caps;
+}
+
+.modal_header {
+  border-bottom: 2px solid #888;
 }
 
 .modal_body {
