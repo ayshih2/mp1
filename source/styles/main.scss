@@ -17,6 +17,8 @@ $grey: #A9A9A9;
 }
 
 html {
+  max-width: 100%;
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -26,6 +28,8 @@ body {
   height: 100%;
   overflow: auto;
   background-color: $light-grey;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 header {
@@ -159,7 +163,7 @@ ul {
 
 #ari_page {
   border-bottom: 2px gray solid;
-  padding: 0;
+  padding: 10px;
   display: inline-flex;
   align-items: center;
   justify-content:space-evenly;
@@ -169,6 +173,10 @@ ul {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+#buwygib {
+  padding: 20px;
 }
 
 #ari_page p {
@@ -326,6 +334,7 @@ ul {
 /* position arrows across from each other */
 .next {
   right: 0;
+  padding: 0px 15px 0px 0px;
 }
 
 .fade {
