@@ -41,13 +41,6 @@ function getPosition(el) {
   return { x: xPos, y: yPos };
 }
 
-/* from https://stackoverflow.com/questions/20726557/ */
-document.addEventListener('DOMContentLoaded', function() {
-	document.getElementById('ariBttn').addEventListener('click', function(){ changeActive("ariBttn"); }, false);
-	document.getElementById('bpBttn').addEventListener('click', function(){ changeActive("bpBttn"); }, false);
-	document.getElementById('billieBttn').addEventListener('click', function(){ changeActive("billieBttn"); }, false);
-	/*document.getElementById('moreBttn').addEventListener('click', function(){ changeActive("moreBttn"); }, false);*/
-}, false);
 
 
 function changeActive(target) {
@@ -55,5 +48,45 @@ function changeActive(target) {
   /* since there should only be one active link at one time */
   current[0].classList.remove('active');
   document.getElementById(target).className = 'active';
+}
+
+// Get the modal
+
+// Get the button that opens the modal
+//var btn = document.getElementById("tracklistBttn");
+
+// Get the <span> element that closes the modal
+//var span = document.getElementsByClassName("close")[0];
+
+/*// When the user clicks on the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}*/
+
+
+/* from https://stackoverflow.com/questions/20726557/ */
+document.addEventListener('DOMContentLoaded', function() {
+	// code for navbar
+	document.getElementById('ariBttn').addEventListener('click', function(){ changeActive("ariBttn"); }, false);
+	document.getElementById('bpBttn').addEventListener('click', function(){ changeActive("bpBttn"); }, false);
+	document.getElementById('billieBttn').addEventListener('click', function(){ changeActive("billieBttn"); }, false);
+	
+	// code for modal
+	var modal = document.getElementById('ariModal');
+	document.getElementById('tracklistBttn').addEventListener('click', function() { modal.style.display = "block";}, true);
+	document.getElementsByClassName("close")[0].addEventListener('click', function(){ modal.style.display = "none"; }, false);
+}, false);
+
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
 

@@ -142,6 +142,65 @@ ul {
 
 #ari_page {
   border-bottom: 2px gray solid;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content:center;
+  width: 100%;
+  
+}
+
+#ari_page p {
+  font-size: 3vw;
+  font-variant: small-caps;
+  color: #f9f4e6;
+  margin: 0;
+}
+
+#ari_page ul li {
+  color: #f9f4e6;
+  font-variant: small-caps;
+  flex-basis: calc(100% - 20px);
+}
+
+#ari_text {
+  display: flex;
+  flex-direction: columns;
+  text-align: center;
+}
+
+#buwygib {
+  
+}
+
+#tracklistBttn {
+  
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-indent: 1;
+  width: auto; 
+  height: auto;
+  overflow: auto;
+  background-color: rgba(134,98,110,0.4);
+}
+
+.modal_content {
+  border: 10px solid #888;
+  border-radius: 10px;
+  background-color: rgb(134,98,110);
+  padding: 25px 25px;
+  color: #f9f4e6;
+  font-variant: small-caps;
+}
+
+.modal_body {
+  list-style-position: inside;
+  vertical-align:middle; 
+  display: inline-block;
+  text-align: left;
 }
 
 /* ----------------------- BILLIE --------------- */
