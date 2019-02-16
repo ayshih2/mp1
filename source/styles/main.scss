@@ -1,14 +1,13 @@
 $off-white: #f9f4e6;
-$dark-grey: #404040;
 $light-grey: #888888;
 $pink: #86626E;
 $black: #000000;
 $grey: #A9A9A9;
 
-@mixin style_font($size) {
+@mixin style_font($size, $color) {
   font-size: $size;
   font-variant: small-caps;
-  color: $off-white;
+  color: $color;
 }
 
 @mixin display_flex($flex, $column, $center) {
@@ -26,11 +25,11 @@ body {
   margin: 0;
   height: 100%;
   overflow: auto;
-  background-color: $dark-grey;
+  background-color: $light-grey;
 }
 
 header {
-  background-color: $dark-grey;
+  background-color: $light-grey;
   height: 5vh;
   margin: 10px 0;
   display:block;
@@ -40,13 +39,13 @@ header h1 {
   padding: 0px 30px;
   margin: 0;
   display:table-cell;
-  @include style_font(2vw);
+  @include style_font(2vw, $off-white);
 }
 
 footer {
   text-align: center;
-  @include style_font(1.2vw);
-  background: $dark-grey;
+  @include style_font(1.2vw, $off-white);
+  background: $light-grey;
   padding: 0 0 5px 0;
 }
 
@@ -173,12 +172,12 @@ ul {
 }
 
 #ari_page p {
-  @include style_font(3vw);
+  @include style_font(3vw, $pink);
   margin: 0;
 }
 
 #ari_page ul li {
-  color: $off-white;
+  color: $pink;
   font-variant: small-caps;
   flex-basis: calc(100% - 20px);
 }
@@ -188,22 +187,17 @@ ul {
 }
 
 #tracklistBttn {
-  color: $off-white;
+  color: $pink;
   font-variant: small-caps;
   width: auto;
-  border: 1px solid $off-white;
+  border: 1px solid $pink;
   padding: 5px 5px;
 }
 
 #ari_page a:hover {
-  outline: 2px solid $pink;
-  background-color: $pink;
+  outline: 2px solid $off-white;
+  background-color: $off-white;
 }
-
-/*#tun_album {
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}*/
 
 .modal {
   display: none;
@@ -255,7 +249,7 @@ ul {
 }
 
 #billie_page p {
-  @include style_font(3vw);
+  @include style_font(3vw, $off-white);
   text-align: center;
   width: 100%;
   margin: 0;
@@ -270,7 +264,7 @@ ul {
 }
 
 #billie_content p {
-  @include style_font(3vw);
+  @include style_font(3vw, $off-white);
   text-align: center;
   width: 100%;
 }
@@ -288,11 +282,11 @@ ul {
 /* ------------- BLACKPINK --------------- */
 
 #bp_page {
-  border-bottom: 2px gray solid;
   overflow: hidden;
   background: black;
   max-width: 455;
   max-height: 810px;
+  padding: 10px;
 }
 
 .bp_caption {
@@ -353,12 +347,12 @@ ul {
 
 /* ------------- BLACKPINK MEMBER INFO ------------- */
 #more_page {
-  border-top: 2px gray solid;
   font-size: 1.5vw;
   display: table;
   left: 50%;
   text-align: center;
   padding-bottom: 20px;
+  background: black;
 }
 
 .more_gifs {
