@@ -17,6 +17,15 @@ body {
   /*position: relative;*/
 }
 
+footer {
+  text-align: center;
+  font-size: 1.2vw;
+  font-variant: small-caps;
+  color: #f9f4e6;
+  background: #404040;
+  padding: 0 0 5px 0;
+}
+
 #navbar {
   width: 100%;
   /*padding: 0px 0px 0px 0px;*/
@@ -24,7 +33,7 @@ body {
   background-color: #86626E;
   
   /* sticks navbar to top and removes any unnecessary borders */
-  top: 0;
+  top: 0;                                                                   /* CHANGE!!!! TO DO! HEADER */
   margin: 0;
   position: fixed;
   /* higher z-index will allow navbar to stay in front of everything */
@@ -135,12 +144,60 @@ ul {
   border-bottom: 2px gray solid;
 }
 
+/* ----------------------- BILLIE --------------- */
+
 #billie_page {
   border-bottom: 2px gray solid;
+  display: inline-flex;
+  align-items: center;
 }
+
+#billie_page p {
+  font-size: 3vw;
+  font-variant: small-caps;
+  color: #f9f4e6;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#billie_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#billie_content p {
+  font-size: 3vw;
+  font-variant: small-caps;
+  color: #f9f4e6;
+  text-align: center;
+  width: 100%;
+}
+
+#billie_content ul li {
+  color: #f9f4e6;
+  font-variant: small-caps;
+}
+
+
+/* for placing text underneath vid/img https://stackoverflow.com/questions/22420386/ */
+
+#baf_vid {
+  display: flex;
+  flex-direction: row
+  /*padding: 0 80px 0 0;*/
+}
+
+/* ------------- BLACKPINK --------------- */
 
 #bp_page {
   border-bottom: 2px gray solid;
+  background: black;
 }
 
 .bp_caption {
@@ -149,21 +206,26 @@ ul {
 }
 
 .bp_photos {
-  width: 40%;
+  width: 30%;
   height: auto;
   margin: 10px 20px 0px 20px;
 }
 
 .slideshow_container {
-  float: left;
+  /*position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;*/
   margin: auto;
+  position: relative;
+  text-align: center;
 }
 
 .slides {
   /*display: none;*/
 }
 
-.prev, .next {
+/*.prev, .next {
   cursor: pointer;
   user-select: none;
   color: white;
@@ -177,18 +239,35 @@ ul {
   
   position: absolute;
   transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;*/
+  border-radius: 0 3px 3px 0;
+}*/
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  /*margin-top: -22px;
+  padding: 16px;*/
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
 }
 
 /*.next {
-  right: 20;
+  right: 0;
   border-radius: 0px 0 0 0px;
 }*/
-
-.right {
-  right: 5px;
-}
-
 
 #more_page {
   border-top: 2px gray solid;
