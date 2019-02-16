@@ -26,19 +26,36 @@ footer {
   padding: 0 0 5px 0;
 }
 
+header {
+  background-color: #404040;
+  height: 5vh;
+  margin: 10px 0;
+  display:block;
+}
+
+header h1 {
+  padding: 0px 30px;
+  margin: 0;
+  color: #f9f4e6;
+  font-size: 2vw;
+  font-variant: small-caps;
+  display:table-cell;
+}
+
 #navbar {
   width: 100%;
-  /*padding: 0px 0px 0px 0px;*/
   padding: 25px 0px;
   background-color: #86626E;
-  
+  display: table;
+}
+
+.fixed_to_top {
+  top: 0;
   /* sticks navbar to top and removes any unnecessary borders */
-  top: 0;                                                                   /* CHANGE!!!! TO DO! HEADER */
-  margin: 0;
+              
   position: fixed;
   /* higher z-index will allow navbar to stay in front of everything */
   z-index: 99;
-
   transition: 0.4s;
 }
 
@@ -49,18 +66,11 @@ ul {
   text-align: left;
 }
 
-#navbarTitle {
-  float: left;
-  font-size: 2vw;
-  color: #f9f4e6;
-  padding: 0 20px;
-  font-variant: small-caps;
-}
-
 #navbarRight {
   float: right;
   width: 60%;
   font-variant: small-caps;
+  display: table-cell;
 }
 
 /* Basic Outline from: https://www.w3schools.com/css/css_navbar.asp */
@@ -130,6 +140,7 @@ ul {
 .icon {
   text-align: center;
   font-size: 30px;
+  color: #86626E;
 }
 
 .col p {
@@ -179,7 +190,7 @@ ul {
   padding: 5px 5px;
 }
 
-a:hover {
+#ari_page a:hover {
   outline: 2px solid #86626E;
   background-color: #86626E;
 }

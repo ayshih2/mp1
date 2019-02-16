@@ -12,11 +12,20 @@ function scrollFunction() {
 	var offsetDiv = getPosition(homeDiv);
 	/*alert(offsetDiv.x + " " + offsetDiv.y);*/
 
+	if (document.body.scrollTop > 55 || document.documentElement.scrollTop > 55) {
+			document.getElementById("navbar").className = "fixed_to_top";
+//    document.getElementById("logo").style.fontSize = "25px";
+  } else {
+  	document.getElementById("navbar").className = "";
+//    document.getElementById("logo").style.fontSize = "35px";
+  }
 
-	if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+	if (document.body.scrollTop > 75 || document.documentElement.scrollTop > 75) {
+			//document.getElementById("navbar").className = "fixed_to_top";
 	    document.getElementById("navbar").style.padding = "10px 0px";
 //    document.getElementById("logo").style.fontSize = "25px";
   } else {
+  	//document.getElementById("navbar").className = "";
     document.getElementById("navbar").style.padding = "25px 0px";
 //    document.getElementById("logo").style.fontSize = "35px";
   }
