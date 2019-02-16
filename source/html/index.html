@@ -9,20 +9,7 @@
 </head>
 
 <body>
-
     <script src="bundle.js" type="text/javascript"></script>
-
-    <!--link to resizing https://www.w3schools.com/howto/howto_js_navbar_shrink_scroll.asp -->
-    <!--stick navbar -->
-    <!-- may be helpful https://codepen.io/BuiltBySam/pen/merjWp --> 
-<!--    <div id="navbar">
-        <ul>
-            <li><a class="active" href="default.asp">Home</a></li>
-            <li><a href="news.asp">News</a></li>
-            <li><a href="contact.asp">Contact</a></li>
-            <li><a href="about.asp">About</a></li>
-        </ul>
-    </div> -->
 
     <header>
         <h1>Women in Pop Music</h1>
@@ -33,7 +20,6 @@
             <a href='#ari_page' class="active" id="ariBttn">Ariana Grande</a>
             <a href='#billie_page' class="" id="billieBttn">Billie Eilish</a>
             <a href='#bp_page' id="bpBttn">Blackpink</a>
-            <!--<a href='#more_page' id="moreBttn">More Artists</a>-->
         </div>
     </div>
 
@@ -48,8 +34,6 @@
                 <li>Other singles: thank u, next, 7 rings</li>
             </ul>
             <br>
-            <!--<button id="tracklistBttn">thank u, next Tracklist</button>-->
-            <!-- #! prevents link from scrolling to top of page -->
             <a href="#!" id="tracklistBttn">thank u, next Tracklist</a>
         </div>
         
@@ -58,7 +42,6 @@
 
         <!-- used as tutorial https://www.w3schools.com/howto/howto_css_modals.asp -->
         <div id="ariModal" class="modal">
-            <!-- Modal content -->
             <div class="modal_content">
                 <div class="modal_header">
                     <span class="close">&times;</span>
@@ -81,7 +64,6 @@
                     </ol>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -96,17 +78,18 @@
             </ul>
         
             <video id="baf_vid" width="640" height="480" autoplay muted loop>
-                    <source src="../assets/billie.mp4" type="video/mp4">
+                <source src="../assets/billie.mp4" type="video/mp4">
             </video>
         </div>
     </div>
 
-    <!-- for carousel -->
+    <!-- tutorial for carousel https://www.w3schools.com/howto/howto_js_slideshow.asp -->
     <div class="sectionBody" id="bp_page">
         <div class="slideshow_container">
             <div class="slides fade">
                 <img src="../assets/bplogo.jpg" class="bp_photos">
             </div>
+
             <div class="slides fade">
                 <img src="../assets/group.jpg" class="bp_photos">
             </div>
@@ -131,6 +114,7 @@
                 <div class="bp_caption">LISA</div>
             </div>
 
+            <!-- arrows for navigating -->
             <a class="prev">&#10094;</a>
             <a class="next">&#10095;</a>
         </div>

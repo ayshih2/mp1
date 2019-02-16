@@ -12,22 +12,18 @@ function scrollFunction() {
 	var offsetDiv = getPosition(homeDiv);
 	/*alert(offsetDiv.x + " " + offsetDiv.y);*/
 
+	// fix navbar to top after passing header
 	if (document.body.scrollTop > 55 || document.documentElement.scrollTop > 55) {
 			document.getElementById("navbar").className = "fixed_to_top";
-//    document.getElementById("logo").style.fontSize = "25px";
   } else {
   	document.getElementById("navbar").className = "";
-//    document.getElementById("logo").style.fontSize = "35px";
   }
 
+  // shrink/expand navbar
 	if (document.body.scrollTop > 75 || document.documentElement.scrollTop > 75) {
-			//document.getElementById("navbar").className = "fixed_to_top";
 	    document.getElementById("navbar").style.padding = "10px 0px";
-//    document.getElementById("logo").style.fontSize = "25px";
   } else {
-  	//document.getElementById("navbar").className = "";
     document.getElementById("navbar").style.padding = "25px 0px";
-//    document.getElementById("logo").style.fontSize = "35px";
   }
 
 }
@@ -50,21 +46,12 @@ function getPosition(el) {
   return { x: xPos, y: yPos };
 }
 
-
 function changeActive(target) {
   var current = document.getElementsByClassName('active');
   /* since there should only be one active link at one time */
   current[0].classList.remove('active');
   document.getElementById(target).className = 'active';
 }
-
-/*document.addEventListener('click', function(event) {
-	var modal = document.getElementById('ariModal');
-  if (event.target == modal) {
-    modal.style.display = 'none';
-  }
-}, false);*/
-
 
 /* from https://stackoverflow.com/questions/20726557/ */
 document.addEventListener('DOMContentLoaded', function() {
@@ -79,9 +66,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	document.getElementsByClassName("close")[0].addEventListener('click', function(){ modal.style.display = "none"; }, false);
 
 	// for carosusel
-
-	document.getElementsByClassName('prev')[0].addEventListener('click', function(){ plusSlides(-1); }, false);
-	document.getElementsByClassName('next')[0].addEventListener('click', function(){ plusSlides(1); }, false);
+	document.getElementsByClassName('prev')[0].addEventListener('click', function(){ changeSlide(-1); }, false);
+	document.getElementsByClassName('next')[0].addEventListener('click', function(){ changeSlide(1); }, false);
 
 	window.addEventListener('click', function(event) {
 		if (event.target == modal) {
@@ -89,46 +75,31 @@ document.addEventListener('DOMContentLoaded', function() {
   	}
 	});
 
-	var slideIndex = 1;
-	showSlides(slideIndex);
+	// for caroseul https://www.w3schools.com/howto/howto_js_slideshow.asp
+	var slideIdx = 1;
+	showSlides(slideIdx);
 
-	// Next/previous controls
-	function plusSlides(n) {
-  	showSlides(slideIndex += n);
-	}
-
-	// Thumbnail image controls
-	function currentSlide(n) {
-  	showSlides(slideIndex = n);
+	// go to next/prev slide
+	function changeSlide(n) {
+  	showSlides(slideIdx += n);
 	}
 
 	function showSlides(n) {
-  	var i;
   	var slides = document.getElementsByClassName("slides");
-  	///var dots = document.getElementsByClassName("dot");
-  	if (n > slides.length) {slideIndex = 1} 
-  	if (n < 1) {slideIndex = slides.length}
-  	for (i = 0; i < slides.length; i++) {
+  	if (n > slides.length) {
+  		slideIdx = 1;
+  	} 
+  	if (n < 1) {
+  		slideIdx = slides.length;
+  	}
+  	for (var i = 0; i < slides.length; i++) {
       slides[i].style.display = "none"; 
   	}
-  	//for (i = 0; i < dots.length; i++) {
-    //  dots[i].className = dots[i].className.replace(" active", "");
-  	//}
-  	slides[slideIndex-1].style.display = "block"; 
-  	//dots[slideIndex-1].className += " active";
+
+  	// show slide
+  	slides[slideIdx - 1].style.display = "block"; 
 	}
-
 }, false);
-
-
-// When the user clicks anywhere outside of the modal, close it
-/*window.onclick = function(event) {
-	var modal = document.getElementById('ariModal');
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}*/
-
 
 
 

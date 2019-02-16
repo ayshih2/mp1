@@ -1,8 +1,21 @@
-/* height 100% for html and body + overflow hidden for html + overflow auto to prevent website from "bouncing" when scrolling up */
-/* https://stackoverflow.com/questions/32500876/how-to-prevent-white-space-bounce-after-scrolling-to-the-top-of-the-page-and-t */
+$off-white: #f9f4e6;
+$dark-grey: #404040;
+$light-grey: #888888;
+$pink: #86626E;
+$black: #000000;
+$grey: #A9A9A9;
 
-/* LIGHT PINK: #B75C57 DARK PINK: #DC3D34 BLUE: #334D5C GREY: #282A2A DARK GREY: #232b2b OFFWHITE: f9f4e6*/
-/* BP GREY: #5E524B DARK PINK: #ad565a LIGHT PINK: FF91A4 */
+@mixin style_font($size) {
+  font-size: $size;
+  font-variant: small-caps;
+  color: $off-white;
+}
+
+@mixin display_flex($flex, $column, $center) {
+  display: $flex;
+  flex-direction: $column;
+  justify-content: $center;
+}
 
 html {
   scroll-behavior: smooth;
@@ -13,21 +26,11 @@ body {
   margin: 0;
   height: 100%;
   overflow: auto;
-  background-color: #404040;
-  /*position: relative;*/
-}
-
-footer {
-  text-align: center;
-  font-size: 1.2vw;
-  font-variant: small-caps;
-  color: #f9f4e6;
-  background: #404040;
-  padding: 0 0 5px 0;
+  background-color: $dark-grey;
 }
 
 header {
-  background-color: #404040;
+  background-color: $dark-grey;
   height: 5vh;
   margin: 10px 0;
   display:block;
@@ -36,34 +39,33 @@ header {
 header h1 {
   padding: 0px 30px;
   margin: 0;
-  color: #f9f4e6;
-  font-size: 2vw;
-  font-variant: small-caps;
   display:table-cell;
+  @include style_font(2vw);
 }
+
+footer {
+  text-align: center;
+  @include style_font(1.2vw);
+  background: $dark-grey;
+  padding: 0 0 5px 0;
+}
+
+/* -------------------- STYLING NAVBAR ----------------- */
 
 #navbar {
   width: 100%;
   padding: 25px 0px;
-  background-color: #86626E;
+  background-color: $pink;
   display: table;
 }
 
+/* attach as class to navbar once you move past header */
 .fixed_to_top {
-  top: 0;
-  /* sticks navbar to top and removes any unnecessary borders */
-              
+  top: 0;          
   position: fixed;
   /* higher z-index will allow navbar to stay in front of everything */
   z-index: 99;
   transition: 0.4s;
-}
-
-ul {
-  
-  /*list-style-position: inside;*/
-  display: inline-block;
-  text-align: left;
 }
 
 #navbarRight {
@@ -85,27 +87,27 @@ ul {
   
   /* separates text links so that they're not squished */
   text-decoration: none;
-  color: #f9f4e6;
+  color: black;
   width: 33.33%;
 }
 
-/* Change the link color on hover */
+/* change color when hovered over */
 #navbar a:hover {
   outline: 1.5px solid black;
   outline-offset: 2px;
-  color: #000000;
+  color: $black;
 }
 
 /* active section will be highlighted in navbar */
 #navbar a.active {
-  color: #f9f4e6;
+  color: $off-white;
   text-decoration: underline;
 }
 
+/* for when screen becomes very narrow */
 @media screen and (max-width: 580px) {
   #navbar {
-    padding: 20px 10px !important; /* Use !important to make sure that JavaScript doesn't override the padding on small screens */
-  }
+    padding: 20px 10px !important;  }
   #navbar a {
     float: none;
     display: block;
@@ -113,20 +115,20 @@ ul {
   }
 }
 
-/* ----------------------ABOVE IS NAV BAR STUFF-------------------- */
+/* ------------------- MISC -------------------- */
 
+ul {
+  display: inline-block;
+  text-align: left;
+}
 
 .col {
   display: table-cell;
-  /*display: inline-block;*/
   vertical-align: middle;
   text-align: center;
-  font-variant: small-caps;
-
-  /*margin: 0;*/
   width: 25%;
   font-variant: small-caps;
-  color: #f9f4e6;
+  color: $off-white;
 }
 
 @media screen and (max-width: 980px) {
@@ -137,20 +139,21 @@ ul {
   }
 }
 
+.col p {
+  text-align: center;
+}
+
+/* styling the font awesome icon */
 .icon {
   text-align: center;
   font-size: 30px;
-  color: #86626E;
-}
-
-.col p {
-  text-align: center;
+  color: $pink;
 }
 
 .sectionBody {
   height: 800px;
   width: 100%;
-  background-color: #888888;
+  background-color: $light-grey;
 }
 
 /* ---------------- ARIANA --------------------- */
@@ -161,39 +164,46 @@ ul {
   display: inline-flex;
   align-items: center;
   justify-content:space-evenly;
+
+
+  background-image: url("../assets/breathin.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #ari_page p {
-  font-size: 3vw;
-  font-variant: small-caps;
-  color: #f9f4e6;
+  @include style_font(3vw);
   margin: 0;
 }
 
 #ari_page ul li {
-  color: #f9f4e6;
+  color: $off-white;
   font-variant: small-caps;
   flex-basis: calc(100% - 20px);
 }
 
 #ari_text {
-  display: flex;
-  flex-direction: columns;
-  text-align: center;
+  @include display_flex(flex, column, center);
 }
 
 #tracklistBttn {
-  color: #f9f4e6;
+  color: $off-white;
   font-variant: small-caps;
   width: auto;
-  border: 1px solid #f9f4e6;
+  border: 1px solid $off-white;
   padding: 5px 5px;
 }
 
 #ari_page a:hover {
-  outline: 2px solid #86626E;
-  background-color: #86626E;
+  outline: 2px solid $pink;
+  background-color: $pink;
 }
+
+/*#tun_album {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}*/
 
 .modal {
   display: none;
@@ -214,19 +224,19 @@ ul {
 }
 
 .modal_content {
-  border: 10px solid #A9A9A9;
+  border: 10px solid $grey;
   border-radius: 10px;
-  background-color: rgb(134,98,110);
+  background-color: $pink;
   padding: 25px 25px;
   margin: 0;
-  color: #f9f4e6;
+  color: $off-white;
   width: 50%;
   height: auto;
   font-variant: small-caps;
 }
 
 .modal_header {
-  border-bottom: 2px solid #A9A9A9;
+  border-bottom: 2px solid $grey;
 }
 
 .modal_body {
@@ -245,9 +255,7 @@ ul {
 }
 
 #billie_page p {
-  font-size: 3vw;
-  font-variant: small-caps;
-  color: #f9f4e6;
+  @include style_font(3vw);
   text-align: center;
   width: 100%;
   margin: 0;
@@ -255,53 +263,45 @@ ul {
 }
 
 #billie_content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  @include display_flex(flex, column, center);
   align-items: center;
   margin-left: auto;
   margin-right: auto;
 }
 
 #billie_content p {
-  font-size: 3vw;
-  font-variant: small-caps;
-  color: #f9f4e6;
+  @include style_font(3vw);
   text-align: center;
   width: 100%;
 }
 
 #billie_content ul li {
-  color: #f9f4e6;
+  color: $off-white;
   font-variant: small-caps;
 }
-
-
-/* for placing text underneath vid/img https://stackoverflow.com/questions/22420386/ */
 
 #baf_vid {
   display: flex;
   flex-direction: row
-  /*padding: 0 80px 0 0;*/
 }
 
 /* ------------- BLACKPINK --------------- */
 
 #bp_page {
   border-bottom: 2px gray solid;
-  background: gray;
-  object-fit: cover;
   overflow: hidden;
-  background: gray;
+  background: black;
+  max-width: 455;
+  max-height: 810px;
 }
 
 .bp_caption {
   font-variant: small-caps;
-  color: #f9f4e6;
+  color: $off-white;
 }
 
 .bp_photos {
-  max-width:90%;
+  max-width:80%;
   height: auto;
 }
 
@@ -322,20 +322,16 @@ ul {
   position: absolute;
   top: 50%;
   width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
   font-weight: bold;
   font-size: 28px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
   user-select: none;
+  color: $off-white;
+  margin: 0px 10px;
 }
 
-/* Position the "next button" to the right */
+/* position arrows across from each other */
 .next {
   right: 0;
-  border-radius: 3px 0 0 3px;
 }
 
 .fade {
@@ -355,7 +351,7 @@ ul {
   to {opacity: 1}
 }
 
-
+/* ------------- BLACKPINK MEMBER INFO ------------- */
 #more_page {
   border-top: 2px gray solid;
   font-size: 1.5vw;
