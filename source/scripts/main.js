@@ -14,8 +14,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	// code for modal
 	var modal = document.getElementById('ariModal');
-	document.getElementById('tracklistBttn').addEventListener('click', function() { modal.style.display = "block";}, false);
-	document.getElementsByClassName("close")[0].addEventListener('click', function(){ modal.style.display = "none"; }, false);
+	document.getElementById('tracklistBttn').addEventListener('click', function() { 
+		modal.style.display = "block"; 
+		document.documentElement.style.overflow = 'hidden';
+   	document.body.scroll = "no";
+ 	}, false);
+	document.getElementsByClassName("close")[0].addEventListener('click', function(){ 
+		modal.style.display = "none"; 
+		document.documentElement.style.overflow = 'scroll';
+ 		document.body.scroll = "yes";
+	}, false);
 
 	// for carosusel
 	document.getElementsByClassName('prev')[0].addEventListener('click', function(){ changeSlide(-1); }, false);
@@ -24,6 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	window.addEventListener('click', function(event) {
 		if (event.target == modal) {
     	modal.style.display = "none";
+    	document.documentElement.style.overflow = 'scroll';
+ 			document.body.scroll = "yes";
   	}
 	});
 
