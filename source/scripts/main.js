@@ -37,10 +37,13 @@ document.addEventListener('DOMContentLoaded', function() {
   	}
 	});
 
+	// to make sure position indicator updates when window is resized
+	window.addEventListener("resize", positionIndicator);
+
 	// for caroseul https://www.w3schools.com/howto/howto_js_slideshow.asp
 	var slideIdx = 1;
 	showSlides(slideIdx);
-
+	
 	// go to next/prev slide
 	function changeSlide(n) {
   	showSlides(slideIdx += n);
@@ -63,9 +66,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 }, false);
 
-var scrollPos = 0;
+/* To check whether navbar should be fixed and resized based on scroll */
 window.onscroll = function() {scrollFunction()};
-
 function scrollFunction() {
 	// fix navbar to top after passing header
 	if (document.body.scrollTop > 55 || document.documentElement.scrollTop > 55) {
@@ -77,11 +79,26 @@ function scrollFunction() {
   // shrink/expand navbar
 	if (document.body.scrollTop > 75 || document.documentElement.scrollTop > 75) {
 	    document.getElementById("navbar").style.padding = "10px 0px";
+	    var links = document.getElementsByClassName("link");
+    	for (var i = 0; i < links.length; i++) {
+    		links[i].style.fontSize= "1.7vw";
+    	}
   } else {
     document.getElementById("navbar").style.padding = "25px 0px";
+    var links = document.getElementsByClassName("link");
+    for (var i = 0; i < links.length; i++) {
+    	links[i].style.fontSize= "2.3vw";
+    }
   }
 
-  /* credit to https://codepen.io/lehollandaisvolant/pen/ryrrGx 
+  // update active link
+  positionIndicator();
+}
+
+/* Change active links based on scroll direction and what part of website you're on */
+var scrollPos = 0;
+function positionIndicator() {
+	/* credit to https://codepen.io/lehollandaisvolant/pen/ryrrGx 
    * Need scroll direction so that the active link doesn't prematurely change
    */
   var scrollDir = "";
