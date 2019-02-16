@@ -1,56 +1,8 @@
-window.onscroll = function() {scrollFunction()};
-
-function offset(el) {
-    var rect = el.getBoundingClientRect();
-    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
-}
-
-function scrollFunction() {
-	var homeDiv = document.getElementById("ari_page");
-	var offsetDiv = getPosition(homeDiv);
-	/*alert(offsetDiv.x + " " + offsetDiv.y);*/
-
-	// fix navbar to top after passing header
-	if (document.body.scrollTop > 55 || document.documentElement.scrollTop > 55) {
-			document.getElementById("navbar").className = "fixed_to_top";
-  } else {
-  	document.getElementById("navbar").className = "";
-  }
-
-  // shrink/expand navbar
-	if (document.body.scrollTop > 75 || document.documentElement.scrollTop > 75) {
-	    document.getElementById("navbar").style.padding = "10px 0px";
-  } else {
-    document.getElementById("navbar").style.padding = "25px 0px";
-  }
-
-}
-
-/* potentially helpful http://codetheory.in/change-active-state-links-sticky-navigation-scroll/ */
-/* Code credit: https://www.kirupa.com/html5/get_element_position_using_javascript.htm */
-function getPosition(el) {
-  var xPos = 0;
-  var yPos = 0;
- 
-  while (el) {
-     var xScroll = el.scrollLeft || document.documentElement.scrollLeft;
-     var yScroll = el.scrollTop || document.documentElement.scrollTop;
- 
-     xPos += (el.offsetLeft - xScroll + el.clientLeft);
-     yPos += (el.offsetTop - yScroll + el.clientTop);
- 
-    el = el.offsetParent;
-  }
-  return { x: xPos, y: yPos };
-}
-
 function changeActive(target) {
   var current = document.getElementsByClassName('active');
   /* since there should only be one active link at one time */
   current[0].classList.remove('active');
-  document.getElementById(target).className = 'active';
+  document.getElementById(target).className += ' active';
 }
 
 /* from https://stackoverflow.com/questions/20726557/ */
@@ -100,6 +52,65 @@ document.addEventListener('DOMContentLoaded', function() {
   	slides[slideIdx - 1].style.display = "block"; 
 	}
 }, false);
+
+var scrollPos = 0;
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+	// fix navbar to top after passing header
+	if (document.body.scrollTop > 55 || document.documentElement.scrollTop > 55) {
+			document.getElementById("navbar").className = "fixed_to_top";
+  } else {
+  	document.getElementById("navbar").className = "";
+  }
+
+  // shrink/expand navbar
+	if (document.body.scrollTop > 75 || document.documentElement.scrollTop > 75) {
+	    document.getElementById("navbar").style.padding = "10px 0px";
+  } else {
+    document.getElementById("navbar").style.padding = "25px 0px";
+  }
+
+  /* credit to https://codepen.io/lehollandaisvolant/pen/ryrrGx 
+   * Need scroll direction so that the active link doesn't prematurely change
+   */
+  var scrollDir = "";
+	// adding scroll event
+  if ((document.body.getBoundingClientRect()).top > scrollPos) {
+		scrollDir = "up";
+  }
+	else {
+		scrollDir = "down";
+	}
+	// saves the new position for iteration.
+	scrollPos = (document.body.getBoundingClientRect()).top;
+
+	/* changing active states based on scroll position. outline: https://stackoverflow.com/questions/40409717/*/
+  var ari = document.querySelector('#ari_page');
+  var billie = document.querySelector('#billie_page');
+  var bp = document.querySelector('#bp_page');
+
+  if (scrollDir === "down") {
+  	if (ari.getBoundingClientRect().top <= 0) {
+  		changeActive("ariBttn");
+  	}
+  	if (ari.getBoundingClientRect().bottom <= 0) {
+  		// should change active state to billie section
+  		changeActive("billieBttn");
+  	}
+  	if (billie.getBoundingClientRect().bottom <= 0) {
+  		changeActive("bpBttn");
+  	}
+  } else {
+  	if (billie.getBoundingClientRect().top > 0) {
+  		changeActive("billieBttn");
+  	}
+  	if (ari.getBoundingClientRect().top > 0) {
+  		changeActive("ariBttn");
+  	}
+  }
+}
+
 
 
 
