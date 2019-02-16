@@ -115,6 +115,8 @@ ul {
 
   /*margin: 0;*/
   width: 25%;
+  font-variant: small-caps;
+  color: #f9f4e6;
 }
 
 @media screen and (max-width: 980px) {
@@ -137,8 +139,10 @@ ul {
 .sectionBody {
   height: 800px;
   width: 100%;
-  background-color: #A9A9A9 ;
+  background-color: #888888;
 }
+
+/* ---------------- ARIANA --------------------- */
 
 #ari_page {
   border-bottom: 2px gray solid;
@@ -167,12 +171,17 @@ ul {
   text-align: center;
 }
 
-#buwygib {
-  
+#tracklistBttn {
+  color: #f9f4e6;
+  font-variant: small-caps;
+  width: auto;
+  border: 1px solid #f9f4e6;
+  padding: 5px 5px;
 }
 
-#tracklistBttn {
-  
+a:hover {
+  outline: 2px solid #86626E;
+  background-color: #86626E;
 }
 
 .modal {
@@ -182,20 +191,20 @@ ul {
   width: auto; 
   height: auto;
   overflow: auto;
-  background-color: rgba(134,98,110,0.4);
 }
 
 .modal_content {
-  border: 10px solid #888;
+  border: 10px solid #A9A9A9;
   border-radius: 10px;
   background-color: rgb(134,98,110);
   padding: 25px 25px;
+  margin: 0;
   color: #f9f4e6;
   font-variant: small-caps;
 }
 
 .modal_header {
-  border-bottom: 2px solid #888;
+  border-bottom: 2px solid #A9A9A9;
 }
 
 .modal_body {

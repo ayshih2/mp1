@@ -75,10 +75,10 @@ document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('ariBttn').addEventListener('click', function(){ changeActive("ariBttn"); }, false);
 	document.getElementById('bpBttn').addEventListener('click', function(){ changeActive("bpBttn"); }, false);
 	document.getElementById('billieBttn').addEventListener('click', function(){ changeActive("billieBttn"); }, false);
-	
+
 	// code for modal
 	var modal = document.getElementById('ariModal');
-	document.getElementById('tracklistBttn').addEventListener('click', function() { modal.style.display = "block";}, true);
+	document.getElementById('tracklistBttn').addEventListener('click', function() { modal.style.display = "block";}, false);
 	document.getElementsByClassName("close")[0].addEventListener('click', function(){ modal.style.display = "none"; }, false);
 }, false);
 
