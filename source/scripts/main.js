@@ -5,16 +5,16 @@ function changeActive(target) {
   document.getElementById(target).className += ' active';
 }
 
-/* from https://stackoverflow.com/questions/20726557/ */
+/* Format for onclick listeners https://stackoverflow.com/questions/20726557/ */
 document.addEventListener('DOMContentLoaded', function() {
 	// code for navbar
-	document.getElementById('ariBttn').addEventListener('click', function(){ changeActive("ariBttn"); }, false);
-	document.getElementById('bpBttn').addEventListener('click', function(){ changeActive("bpBttn"); }, false);
-	document.getElementById('billieBttn').addEventListener('click', function(){ changeActive("billieBttn"); }, false);
+	document.getElementById('ari-bttn').addEventListener('click', function(){ changeActive("ari-bttn"); }, false);
+	document.getElementById('bp-bttn').addEventListener('click', function(){ changeActive("bp-bttn"); }, false);
+	document.getElementById('billie-bttn').addEventListener('click', function(){ changeActive("billie-bttn"); }, false);
 
 	// code for modal
-	var modal = document.getElementById('ariModal');
-	document.getElementById('tracklistBttn').addEventListener('click', function() { 
+	var modal = document.getElementById('ari-modal');
+	document.getElementById('tracklist-bttn').addEventListener('click', function() { 
 		modal.style.display = "block"; 
 		document.documentElement.style.overflow = 'hidden';
    	document.body.scroll = "no";
@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	// for carosusel
 	document.getElementsByClassName('prev')[0].addEventListener('click', function(){ changeSlide(-1); }, false);
 	document.getElementsByClassName('next')[0].addEventListener('click', function(){ changeSlide(1); }, false);
-
 	window.addEventListener('click', function(event) {
 		if (event.target == modal) {
     	modal.style.display = "none";
@@ -71,7 +70,7 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
 	// fix navbar to top after passing header
 	if (document.body.scrollTop > 55 || document.documentElement.scrollTop > 55) {
-			document.getElementById("navbar").className = "fixed_to_top";
+			document.getElementById("navbar").className = "fixed-to-top";
   } else {
   	document.getElementById("navbar").className = "";
   }
@@ -113,27 +112,28 @@ function positionIndicator() {
 	scrollPos = (document.body.getBoundingClientRect()).top;
 
 	/* changing active states based on scroll position. outline: https://stackoverflow.com/questions/40409717/*/
-  var ari = document.querySelector('#ari_page');
-  var billie = document.querySelector('#billie_page');
-  var bp = document.querySelector('#bp_page');
+  var ari = document.querySelector('#ari-page');
+  var billie = document.querySelector('#billie-page');
+  var bp = document.querySelector('#bp-page');
 
   if (scrollDir === "down") {
   	if (ari.getBoundingClientRect().top <= 0) {
-  		changeActive("ariBttn");
+  		changeActive("ari-bttn");
   	}
   	if (ari.getBoundingClientRect().bottom <= 0) {
   		// should change active state to billie section
-  		changeActive("billieBttn");
+  		changeActive("billie-bttn");
   	}
   	if (billie.getBoundingClientRect().bottom <= 0) {
-  		changeActive("bpBttn");
+  		changeActive("bp-bttn");
   	}
   } else {
+  	// was scrolling up
   	if (billie.getBoundingClientRect().top > 0) {
-  		changeActive("billieBttn");
+  		changeActive("billie-bttn");
   	}
   	if (ari.getBoundingClientRect().top > 0) {
-  		changeActive("ariBttn");
+  		changeActive("ari-bttn");
   	}
   }
 }

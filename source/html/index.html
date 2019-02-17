@@ -16,15 +16,15 @@
     </header>
 
     <div id="navbar">
-        <div id="navbarRight">
-            <a href='#ari_page' class="link active" id="ariBttn">Ariana Grande</a>
-            <a href='#billie_page' class="link" id="billieBttn">Billie Eilish</a>
-            <a href='#bp_page' class="link" id="bpBttn">Blackpink</a>
+        <div id="navbar-right">
+            <a href='#ari-page' class="link active" id="ari-bttn">Ariana Grande</a>
+            <a href='#billie-page' class="link" id="billie-bttn">Billie Eilish</a>
+            <a href='#bp-page' class="link" id="bp-bttn">Blackpink</a>
         </div>
     </div>
 
-    <div class="sectionBody" id="ari_page">
-        <div id#="ari_text">
+    <div class="section-body" id="ari-page">
+        <div id#="ari-text">
             <p>ARIANA GRANDE</p>
             <p>thank u, next</p>
             <ul>
@@ -34,20 +34,19 @@
                 <li>Other singles: thank u, next, 7 rings</li>
             </ul>
             <br>
-            <a href="#!" id="tracklistBttn">thank u, next Tracklist</a>
+            <a href="#!" id="tracklist-bttn">thank u, next Tracklist</a>
         </div>
         
         <iframe id="buwygib" width="560" height="315" src="https://www.youtube.com/embed/LH4Y1ZUUx2g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         
-
         <!-- used as tutorial https://www.w3schools.com/howto/howto_css_modals.asp -->
-        <div id="ariModal" class="modal">
-            <div class="modal_content">
-                <div class="modal_header">
+        <div id="ari-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
                     <span class="close">&times;</span>
                     <h2>thank u, next tracklist</h2>
                 </div>
-                <div class="modal_body">
+                <div class="modal-body">
                     <ol>
                         <li>imagine</li>
                         <li>needy</li>
@@ -67,8 +66,8 @@
         </div>
     </div>
 
-    <div class="sectionBody" id="billie_page">
-        <div id="billie_content">
+    <div class="section-body" id="billie-page">
+        <div id="billie-content">
             <p>BILLIE EILISH</p>
             <ul>
                 <li>17 years old</li>
@@ -76,42 +75,36 @@
                 <li>Latest single: Bury A Friend</li>
                 <li>Other songs: Ocean Eyes, Bellyache, Lovely</li>
             </ul>
-        
-            <video id="baf_vid" width="640" height="480" autoplay muted loop>
+            <video id="baf-vid" width="640" height="480" autoplay muted loop>
                 <source src="assets/billie.MP4" type="video/mp4">
             </video>
         </div>
     </div>
 
     <!-- tutorial for carousel https://www.w3schools.com/howto/howto_js_slideshow.asp -->
-    <div class="sectionBody" id="bp_page">
-        <div class="slideshow_container">
+    <div class="section-body" id="bp-page">
+        <div class="slideshow-container">
             <div class="slides fade">
-                <img src="assets/bplogo.JPG" class="bp_photos">
+                <img src="assets/bplogo.JPG" alt="blackpink logo pic" class="bp-photos">
             </div>
-
             <div class="slides fade">
-                <img src="assets/group.JPG" class="bp_photos">
+                <img src="assets/group.JPG" alt="group pic" class="bp-photos">
             </div>
-
             <div class="slides fade">
-                <img src="assets/jisoo.JPG" class="bp_photos">
-                <div class="bp_caption">JISOO</div>
+                <img src="assets/jisoo.JPG" alt="jisoo pic" class="bp-photos">
+                <div class="bp-caption">JISOO</div>
             </div>
-
             <div class="slides fade">
-                <img src="assets/jennie.JPG" class="bp_photos">
-                <div class="bp_caption">JENNIE</div>
+                <img src="assets/jennie.JPG" alt="jennie pic" class="bp-photos">
+                <div class="bp-caption">JENNIE</div>
             </div>
-
             <div class="slides fade">
-                <img src="assets/rose.JPG" class="bp_photos">
-                <div class="bp_caption">ROS&#201</div>
+                <img src="assets/rose.JPG" alt="rose pic" class="bp-photos">
+                <div class="bp-caption">ROS&#201</div>
             </div>
-
             <div class="slides fade">
-                <img src="assets/lisa.JPG" class="bp_photos">
-                <div class="bp_caption">LISA</div>
+                <img src="assets/lisa.JPG" alt="lisa pic" class="bp-photos">
+                <div class="bp-caption">LISA</div>
             </div>
 
             <!-- arrows for navigating -->
@@ -120,10 +113,10 @@
         </div>
     </div>
 
-    <div class="sectionBody" id="more_page">
+    <div class="section-body" id="more-page">
         <div class="col">
             <p>Kim Jisoo</p>
-            <img src="assets/jisoo.GIF" class="more_gifs">
+            <img src="assets/jisoo.GIF" alt="jisoo gif" class="more-gifs">
             <br>
             <ul>
                 <li>24 years old</li>
@@ -135,7 +128,7 @@
         </div>
         <div class="col">
             <p>Jennie Kim</p>
-            <img src="assets/jennie.GIF" class="more_gifs">
+            <img src="assets/jennie.GIF" alt="jennie gif" class="more-gifs">
             <br>
             <ul>
                 <li>23 years old</li>
@@ -147,7 +140,7 @@
         </div>
         <div class="col">
             <p>Park Chaeyoung (Ros&#233)</p>
-            <img src="assets/rose.GIF" class="more_gifs">
+            <img src="assets/rose.GIF" alt="rose gif" class="more-gifs">
             <br>
             <ul>
                 <li>22 years old</li>
@@ -159,7 +152,7 @@
         </div>
         <div class="col">
             <p>Lalisa Manoban (Lisa)</p>
-            <img src="assets/lisa.GIF" class="more_gifs">
+            <img src="assets/lisa.GIF" alt="lisa gif" class="more-gifs">
             <br>
             <ul>
                 <li>21 years old</li>
